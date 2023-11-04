@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="background-color: #40739e; max-height: 100vh">
+    <div
+      class="main"
+      style="
+        width: 70%;
+        margin: auto;
+        padding-left: 80px;
+        padding-right: 80px;
+        padding-top: 20px;
+      "
+    >
+      <div>
+        <h3>Form to Upload documents for MLC-2024</h3>
+      </div>
+      <hr />
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="name" class="form-label" style="color: white">Name</label>
+          <br />
+
+          <input
+            style="
+              width: 100%;
+              border-radius: 8px;
+              height: 35px;
+              padding: 10px;
+              border: none;
+            "
+            type="text"
+            id="name"
+            class="textInput"
+            class="form-control"
+            width="100%"
+          />
+        </div>
+
+        <div class="col-md-6">
+          <label for="mobile" class="form-label" style="color: white"
+            >Mobile Number</label
+          >
+          <br />
+          <input
+            style="
+              width: 100%;
+              border-radius: 8px;
+              height: 35px;
+              padding: 10px;
+              border: none;
+            "
+            type="text"
+            id="mobile"
+            class="textInput"
+          />
+        </div>
+
+        <div class="col-md-6">
+          <label for="email" class="form-label" style="color: white"
+            >Email ID</label
+          >
+          <br />
+
+          <input
+            style="
+              width: 100%;
+              border-radius: 8px;
+              height: 35px;
+              padding: 10px;
+              border: none;
+            "
+            type="text"
+            id="email"
+            class="textInput"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="gender" class="form-label" style="color: white"
+            >Gender</label
+          >
+          <select
+            style="width: 100%; height: 35px; border-radius: 8px"
+            id="gender"
+            class="textInput"
+          >
+            <option selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="refered" class="form-label" style="color: white"
+            >Refered By</label
+          >
+          <br />
+
+          <input
+            style="
+              width: 100%;
+              border-radius: 8px;
+              height: 35px;
+              padding: 10px;
+              border: none;
+            "
+            type="text"
+            id="refered"
+            class="textInput"
+          />
+        </div>
+        <!-- <p></p> -->
+        <div>
+          <label for="refered" class="form-label" style="color: white"
+            >Upload Degree/Graduation Certificate or All years Graduation Marks
+            Card * Degree/ Graduation should have been completed on/before Nov
+            2020 Should have completed graduation from any recognized university
+            from India</label
+          >
+          <input type="file" accept="image/*" class="fileInput" />
+        </div>
+        <!-- <p></p> -->
+        <div>
+          <label for="refered" class="form-label" style="color: white"
+            >Upload Valid Address Proof * Address Proof Should be of Bangalore,
+            Bangalore Rural, Ramanagar District. Aadhar Card or Voter ID or
+            Driving License or Electricity Bill or Gas Bill or Bank
+            Passbook</label
+          >
+
+          <input type="file" accept="image/*" class="fileInput" />
+        </div>
+        <!-- <hr /> -->
+        <div>
+          <label for="refered" class="form-label" style="color: white">
+            Upload a Clear Photo</label
+          >
+          <br />
+
+          <input type="file" accept="image/*" class="fileInput" />
+        </div>
+        <div class="col-12"></div>
+        <button id="processButton" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+    <!-- Containers for the images -->
+    <!-- <div class="image-container">
+      <img id="displayImage1" alt="" />
+    </div>
+    <div class="image-container">
+      <img id="displayImage2" alt="" />
+    </div>
+    <div class="image-container">
+      <img id="displayImage3" alt="" />
+    </div> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let url =
+          "https://script.google.com/macros/s/AKfycby8w9V4bvI-H7mAjl_sH7zicmNN2owuA2s11336g7JxpaaDFzYYC8oWf1TvYsAkcd9y/exec";
+        let fileInputs = document.querySelectorAll(".fileInput");
+        let imgElements = document.querySelectorAll(".image-container img");
+        let processButton = document.getElementById("processButton");
+        let textInputs = document.querySelectorAll(".textInput");
+
+        processButton.addEventListener("click", () => {
+          document.getElementById("processButton").innerText = "Submiting...";
+          document.getElementById("processButton").disabled = true;
+          let allFiles = Array.from(fileInputs).map((input) => input.files[0]);
+          let allTexts = Array.from(textInputs).map((input) => input.value);
+          processImages(allFiles, allTexts);
+          console.log(allTexts);
+        });
+
+        function processImages(allFiles, allTexts) {
+          let allData = [];
+
+          // Iterate over allFiles
+          for (let i = 0; i < allFiles.length; i++) {
+            let file = allFiles[i];
+            if (file) {
+              allData.push(
+                new Promise((resolve, reject) => {
+                  let fr = new FileReader();
+                  fr.addEventListener("loadend", () => {
+                    let res = fr.result;
+                    let spt = res.split("base64,")[1];
+                    let obj = {
+                      base64: spt,
+                      type: file.type,
+                      name: file.name,
+                      text: allTexts[i],
+                    };
+                    resolve(obj);
+                  });
+                  fr.readAsDataURL(file);
+                })
+              );
+            } else {
+              allData.push({
+                text: allTexts[i],
+              });
+            }
+          }
+
+          // Add two extra iterations for allTexts
+          for (let i = allFiles.length; i < allTexts.length; i++) {
+            allData.push({
+              text: allTexts[i],
+            });
+          }
+
+          Promise.all(allData).then((data) => {
+            fetch(url, {
+              method: "POST",
+              body: JSON.stringify(data),
+            })
+              .then((r) => r.text())
+              .then((data) => {
+                if (data == "Uploaded") {
+                  alert("Documents Uploaded Successfully");
+                  location.reload();
+                  //   setTimeout(() => {
+                  //     document.getElementById("processButton").innerText =
+                  //       "Submited Successfully";
+                  //   }, 3000);
+                  //   setTimeout(() => {
+                  //   }, 1000);
+                  //   document.getElementById("processButton").disabled = false;
+                }
+                console.log(data);
+              });
+          });
+        }
+      });
+    </script>
+    <!-- Your existing JavaScript code -->
+  </body>
+</html>
