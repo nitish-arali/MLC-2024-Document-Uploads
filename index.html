@@ -27,145 +27,140 @@
         <h3>Form to Upload documents for MLC-2024</h3>
       </div>
       <hr />
-      <div class="row g-3">
-        <div class="col-md-6">
-          <label for="name" class="form-label" style="color: white">Name</label>
-          <br />
+      <form id="uploadForm">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="name" class="form-label" style="color: white"
+              >Name</label
+            >
+            <br />
 
-          <input
-            style="
-              width: 100%;
-              border-radius: 8px;
-              height: 35px;
-              padding: 10px;
-              border: none;
-            "
-            type="text"
-            id="name"
-            class="textInput"
-            class="form-control"
-            width="100%"
-            required
-          />
-        </div>
+            <input
+              style="
+                width: 100%;
+                border-radius: 8px;
+                height: 35px;
+                padding: 10px;
+                border: none;
+              "
+              type="text"
+              id="name"
+              class="textInput"
+              class="form-control"
+              width="100%"
+              required
+            />
+          </div>
 
-        <div class="col-md-6">
-          <label for="mobile" class="form-label" style="color: white"
-            >Mobile Number</label
-          >
-          <br />
-          <input
-            style="
-              width: 100%;
-              border-radius: 8px;
-              height: 35px;
-              padding: 10px;
-              border: none;
-            "
-            type="text"
-            id="mobile"
-            class="textInput"
-            required
-          />
-        </div>
+          <div class="col-md-6">
+            <label for="mobile" class="form-label" style="color: white"
+              >Mobile Number</label
+            >
+            <br />
+            <input
+              style="
+                width: 100%;
+                border-radius: 8px;
+                height: 35px;
+                padding: 10px;
+                border: none;
+              "
+              type="text"
+              id="mobile"
+              class="textInput"
+              required
+            />
+          </div>
 
-        <div class="col-md-6">
-          <label for="email" class="form-label" style="color: white"
-            >Email ID</label
-          >
-          <br />
+          <div class="col-md-6">
+            <label for="email" class="form-label" style="color: white"
+              >Email ID</label
+            >
+            <br />
 
-          <input
-            style="
-              width: 100%;
-              border-radius: 8px;
-              height: 35px;
-              padding: 10px;
-              border: none;
-            "
-            type="text"
-            id="email"
-            class="textInput"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="gender" class="form-label" style="color: white"
-            >Gender</label
-          >
-          <select
-            style="width: 100%; height: 35px; border-radius: 8px"
-            id="gender"
-            class="textInput"
-          >
-            <option selected>Select Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
-        </div>
+            <input
+              style="
+                width: 100%;
+                border-radius: 8px;
+                height: 35px;
+                padding: 10px;
+                border: none;
+              "
+              type="text"
+              id="email"
+              class="textInput"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="gender" class="form-label" style="color: white"
+              >Gender</label
+            >
+            <select
+              style="width: 100%; height: 35px; border-radius: 8px"
+              id="gender"
+              class="textInput"
+            >
+              <option value="" disabled selected>Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
 
-        <div>
-          <label for="refered" class="form-label" style="color: white"
-            >Refered By</label
-          >
-          <br />
+          <div>
+            <label for="refered" class="form-label" style="color: white"
+              >Refered By</label
+            >
+            <br />
 
-          <input
-            style="
-              width: 100%;
-              border-radius: 8px;
-              height: 35px;
-              padding: 10px;
-              border: none;
-            "
-            type="text"
-            id="refered"
-            class="textInput"
-          />
-        </div>
-        <!-- <p></p> -->
-        <div>
-          <label for="refered" class="form-label" style="color: white"
-            >Upload Degree/Graduation Certificate or All years Graduation Marks
-            Card * Degree/ Graduation should have been completed on/before Nov
-            2020 Should have completed graduation from any recognized university
-            from India</label
-          >
-          <input type="file" accept="image/*" class="fileInput" required />
-        </div>
-        <!-- <p></p> -->
-        <div>
-          <label for="refered" class="form-label" style="color: white"
-            >Upload Valid Address Proof * Address Proof Should be of Bangalore,
-            Bangalore Rural, Ramanagar District. Aadhar Card or Voter ID or
-            Driving License or Electricity Bill or Gas Bill or Bank
-            Passbook</label
-          >
+            <input
+              style="
+                width: 100%;
+                border-radius: 8px;
+                height: 35px;
+                padding: 10px;
+                border: none;
+              "
+              type="text"
+              id="refered"
+              class="textInput"
+            />
+          </div>
+          <!-- <p></p> -->
+          <div>
+            <label for="refered" class="form-label" style="color: white"
+              >Upload Degree/Graduation Certificate or All years Graduation
+              Marks Card * Degree/ Graduation should have been completed
+              on/before Nov 2020 Should have completed graduation from any
+              recognized university from India</label
+            >
+            <input type="file" accept="image/*" class="fileInput" required />
+          </div>
+          <!-- <p></p> -->
+          <div>
+            <label for="refered" class="form-label" style="color: white"
+              >Upload Valid Address Proof * Address Proof Should be of
+              Bangalore, Bangalore Rural, Ramanagar District. Aadhar Card or
+              Voter ID or Driving License or Electricity Bill or Gas Bill or
+              Bank Passbook</label
+            >
 
-          <input type="file" accept="image/*" class="fileInput" required />
-        </div>
-        <!-- <hr /> -->
-        <div>
-          <label for="refered" class="form-label" style="color: white">
-            Upload a Clear Photo</label
-          >
-          <br />
+            <input type="file" accept="image/*" class="fileInput" required />
+          </div>
+          <!-- <hr /> -->
+          <div>
+            <label for="refered" class="form-label" style="color: white">
+              Upload a Clear Photo</label
+            >
+            <br />
 
-          <input type="file" accept="image/*" class="fileInput" required />
+            <input type="file" accept="image/*" class="fileInput" required />
+          </div>
+          <div class="col-12"></div>
+          <button id="processButton" class="btn btn-primary">Submit</button>
         </div>
-        <div class="col-12"></div>
-        <button id="processButton" class="btn btn-primary">Submit</button>
-      </div>
+      </form>
     </div>
-    <!-- Containers for the images -->
-    <!-- <div class="image-container">
-      <img id="displayImage1" alt="" />
-    </div>
-    <div class="image-container">
-      <img id="displayImage2" alt="" />
-    </div>
-    <div class="image-container">
-      <img id="displayImage3" alt="" />
-    </div> -->
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         let url =
@@ -176,12 +171,19 @@
         let textInputs = document.querySelectorAll(".textInput");
 
         processButton.addEventListener("click", () => {
-          document.getElementById("processButton").innerText = "Submiting...";
+          document.getElementById("processButton").innerText = "Submitting...";
           document.getElementById("processButton").disabled = true;
           let allFiles = Array.from(fileInputs).map((input) => input.files[0]);
           let allTexts = Array.from(textInputs).map((input) => input.value);
-          processImages(allFiles, allTexts);
-          console.log(allTexts);
+
+          // Check form validity
+          if (document.getElementById("uploadForm").checkValidity()) {
+            processImages(allFiles, allTexts);
+          } else {
+            // alert("Please fill out all required fields.");
+            document.getElementById("processButton").innerText = "Submit";
+            document.getElementById("processButton").disabled = false;
+          }
         });
 
         function processImages(allFiles, allTexts) {
@@ -232,13 +234,6 @@
                 if (data == "Uploaded") {
                   alert("Documents Uploaded Successfully");
                   location.reload();
-                  //   setTimeout(() => {
-                  //     document.getElementById("processButton").innerText =
-                  //       "Submited Successfully";
-                  //   }, 3000);
-                  //   setTimeout(() => {
-                  //   }, 1000);
-                  //   document.getElementById("processButton").disabled = false;
                 }
                 console.log(data);
               });
@@ -246,6 +241,5 @@
         }
       });
     </script>
-    <!-- Your existing JavaScript code -->
   </body>
 </html>
