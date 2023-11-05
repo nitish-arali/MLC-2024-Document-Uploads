@@ -30,7 +30,7 @@
   <body style="background-color: #40739e; max-height: 100vh">
     <div
       class="main"
-      style="margin: auto; padding-left: 8%; padding-right: 8%; padding-top: 2%;padding-bottom: 2%;"
+      style="margin: auto; padding-left: 8%; padding-right: 8%; padding-top: 2%;padding-bottom: 5%;"
     >
       <div>
         <h3>Form to Upload documents for MLC-2024</h3>
@@ -190,7 +190,7 @@
           if (document.getElementById("uploadForm").checkValidity()) {
             processImages(allFiles, allTexts);
           } else {
-            // alert("Please fill out all required fields.");
+            alert("Please fill out all required fields.");
             document.getElementById("processButton").innerText = "Submit";
             document.getElementById("processButton").disabled = false;
           }
