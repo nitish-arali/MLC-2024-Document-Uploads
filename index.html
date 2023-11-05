@@ -12,16 +12,24 @@
       crossorigin="anonymous"
     />
   </head>
+  <style>
+    .starlabel label:after {
+      content: " *";
+      color: red;
+    }
+    @media screen and (max-width: 992px) {
+      .main {
+        width: 100%;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+      }
+    }
+  </style>
   <body style="background-color: #40739e; max-height: 100vh">
     <div
       class="main"
-      style="
-        width: 70%;
-        margin: auto;
-        padding-left: 80px;
-        padding-right: 80px;
-        padding-top: 20px;
-      "
+      style="margin: auto; padding-left: 8%; padding-right: 8%; padding-top: 2%"
     >
       <div>
         <h3>Form to Upload documents for MLC-2024</h3>
@@ -30,8 +38,8 @@
       <form id="uploadForm">
         <div class="row g-3">
           <div class="col-md-6">
-            <label for="name" class="form-label" style="color: white"
-              >Name</label
+            <label for="name" class="form-label"  style="color: white"
+              >Name<span style="color: red;">&nbsp;*</span></label
             >
             <br />
 
@@ -47,6 +55,7 @@
               id="name"
               class="textInput"
               class="form-control"
+              class="starlabel"
               width="100%"
               required
             />
@@ -54,7 +63,7 @@
 
           <div class="col-md-6">
             <label for="mobile" class="form-label" style="color: white"
-              >Mobile Number</label
+              >Mobile Number<span style="color: red;">&nbsp;*</span></label
             >
             <br />
             <input
@@ -128,17 +137,17 @@
           <!-- <p></p> -->
           <div>
             <label for="refered" class="form-label" style="color: white"
-              >Upload Degree/Graduation Certificate or All years Graduation
+              ><span style="color: red;">*&nbsp;</span>Upload Degree/Graduation Certificate or All years Graduation
               Marks Card * Degree/ Graduation should have been completed
               on/before Nov 2020 Should have completed graduation from any
-              recognized university from India</label
+              recognized university from India </label
             >
             <input type="file" accept="image/*" class="fileInput" required />
           </div>
           <!-- <p></p> -->
           <div>
             <label for="refered" class="form-label" style="color: white"
-              >Upload Valid Address Proof * Address Proof Should be of
+              ><span style="color: red;">*&nbsp;</span>Upload Valid Address Proof * Address Proof Should be of
               Bangalore, Bangalore Rural, Ramanagar District. Aadhar Card or
               Voter ID or Driving License or Electricity Bill or Gas Bill or
               Bank Passbook</label
@@ -149,7 +158,7 @@
           <!-- <hr /> -->
           <div>
             <label for="refered" class="form-label" style="color: white">
-              Upload a Clear Photo</label
+              <span style="color: red;">*&nbsp;</span> Upload a Clear Photo</label
             >
             <br />
 
