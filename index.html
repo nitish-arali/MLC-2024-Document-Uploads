@@ -1,256 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MLC-2024 Document Uploads</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-      crossorigin="anonymous"
-    />
-  </head>
-  <style>
-    .starlabel label:after {
-      content: " *";
-      color: red;
-    }
-    @media screen and (max-width: 992px) {
-      .main {
-        width: 100%;
-        padding-left: 5px;
-        padding-right: 5px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-      }
-    }
-  </style>
-  <body style="background-color: #40739e; max-height: 100vh">
-    <div
-      class="main"
-      style="margin: auto; padding-left: 8%; padding-right: 8%; padding-top: 2%;padding-bottom: 5%;"
-    >
-      <div>
-        <h3>Form to Upload documents for MLC-2024</h3>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangalore Graduate Constituency Elections - 2024</title>
+
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 text-center">
+        <h1>Bangalore Graduate Constituency Elections - 2024</h1>
+        <p>Are you a GRADUATE from any UNIVERSITY in INDIA and Residing in Bangalore urban/rural and Ramanagara District. Then its time for you to register as a voter!</p>
+        <a href="page1.html" class="btn btn-primary">REGISTER NOW</a>
       </div>
-      <hr />
-      <form id="uploadForm">
-        <div class="row g-3">
-          <div class="col-md-6">
-            <label for="name" class="form-label"  style="color: white"
-              >Name<span style="color: red;">&nbsp;*</span></label
-            >
-            <br />
-
-            <input
-              style="
-                width: 100%;
-                border-radius: 8px;
-                height: 35px;
-                padding: 10px;
-                border: none;
-              "
-              type="text"
-              id="name"
-              class="textInput"
-              class="form-control"
-              class="starlabel"
-              width="100%"
-              required
-            />
-          </div>
-
-          <div class="col-md-6">
-            <label for="mobile" class="form-label" style="color: white"
-              >Mobile Number<span style="color: red;">&nbsp;*</span></label
-            >
-            <br />
-            <input
-              style="
-                width: 100%;
-                border-radius: 8px;
-                height: 35px;
-                padding: 10px;
-                border: none;
-              "
-              type="text"
-              id="mobile"
-              class="textInput"
-              required
-            />
-          </div>
-
-          <div class="col-md-6">
-            <label for="email" class="form-label" style="color: white"
-              >Email ID</label
-            >
-            <br />
-
-            <input
-              style="
-                width: 100%;
-                border-radius: 8px;
-                height: 35px;
-                padding: 10px;
-                border: none;
-              "
-              type="text"
-              id="email"
-              class="textInput"
-            />
-          </div>
-          <div class="col-md-6">
-            <label for="gender" class="form-label" style="color: white"
-              >Gender</label
-            >
-            <select
-              style="width: 100%; height: 35px; border-radius: 8px"
-              id="gender"
-              class="textInput"
-            >
-              <option value="" disabled selected>Select Gender</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="refered" class="form-label" style="color: white"
-              >Refered By<span style="color: red;">&nbsp;*</span></label
-            >
-            <br />
-
-            <input
-              style="
-                width: 100%;
-                border-radius: 8px;
-                height: 35px;
-                padding: 10px;
-                border: none;
-              "
-              type="text"
-              id="refered"
-              class="textInput"
-              required
-            />
-          </div>
-          <!-- <p></p> -->
-          <div>
-            <label for="refered" class="form-label" style="color: white"
-              ><span style="color: red;">*&nbsp;</span>Upload Degree/Graduation Certificate or All years Graduation
-              Marks Card * Degree/ Graduation should have been completed
-              on/before Nov 2020 Should have completed graduation from any
-              recognized university from India </label
-            >
-            <input type="file" accept="image/*" class="fileInput" required />
-          </div>
-          <!-- <p></p> -->
-          <div>
-            <label for="refered" class="form-label" style="color: white"
-              ><span style="color: red;">*&nbsp;</span>Upload Valid Address Proof * Address Proof Should be of
-              Bangalore, Bangalore Rural, Ramanagar District. Aadhar Card or
-              Voter ID or Driving License or Electricity Bill or Gas Bill or
-              Bank Passbook</label
-            >
-
-            <input type="file" accept="image/*" class="fileInput" required />
-          </div>
-          <!-- <hr /> -->
-          <div>
-            <label for="refered" class="form-label" style="color: white">
-              <span style="color: red;">*&nbsp;</span> Upload a Clear Photo</label
-            >
-            <br />
-
-            <input type="file" accept="image/*" class="fileInput" required />
-          </div>
-          <div class="col-12"></div>
-          <button id="processButton" class="btn btn-primary">Submit</button>
-        </div>
-      </form>
     </div>
+  </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let url =
-          "https://script.google.com/macros/s/AKfycbwUTSguey3zlz_pyCCaK9V3EzXzGDbDZMU4EqiIdjHE2LP2Wh3yDI3FfUd9H8OXSAmPiw/exec";
-        let fileInputs = document.querySelectorAll(".fileInput");
-        let imgElements = document.querySelectorAll(".image-container img");
-        let processButton = document.getElementById("processButton");
-        let textInputs = document.querySelectorAll(".textInput");
-
-        processButton.addEventListener("click", () => {
-          document.getElementById("processButton").innerText = "Submitting...";
-          document.getElementById("processButton").disabled = true;
-          let allFiles = Array.from(fileInputs).map((input) => input.files[0]);
-          let allTexts = Array.from(textInputs).map((input) => input.value);
-
-          // Check form validity
-          if (document.getElementById("uploadForm").checkValidity()) {
-            processImages(allFiles, allTexts);
-          } else {
-            alert("Please fill out all required fields.");
-            document.getElementById("processButton").innerText = "Submit";
-            document.getElementById("processButton").disabled = false;
-          }
-        });
-
-        function processImages(allFiles, allTexts) {
-          let allData = [];
-
-          // Iterate over allFiles
-          for (let i = 0; i < allFiles.length; i++) {
-            let file = allFiles[i];
-            if (file) {
-              allData.push(
-                new Promise((resolve, reject) => {
-                  let fr = new FileReader();
-                  fr.addEventListener("loadend", () => {
-                    let res = fr.result;
-                    let spt = res.split("base64,")[1];
-                    let obj = {
-                      base64: spt,
-                      type: file.type,
-                      name: file.name,
-                      text: allTexts[i],
-                    };
-                    resolve(obj);
-                  });
-                  fr.readAsDataURL(file);
-                })
-              );
-            } else {
-              allData.push({
-                text: allTexts[i],
-              });
-            }
-          }
-
-          // Add two extra iterations for allTexts
-          for (let i = allFiles.length; i < allTexts.length; i++) {
-            allData.push({
-              text: allTexts[i],
-            });
-          }
-
-          Promise.all(allData).then((data) => {
-            fetch(url, {
-              method: "POST",
-              body: JSON.stringify(data),
-            })
-              .then((r) => r.text())
-              .then((data) => {
-                if (data == "Uploaded") {
-                  alert("Documents Uploaded Successfully");
-                  location.reload();
-                }
-                console.log(data);
-              });
-          });
-        }
-      });
-    </script>
-  </body>
+  <!-- Include Bootstrap JS (optional) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
