@@ -13,9 +13,46 @@
     />
   </head>
   <style>
+    /* Overlay CSS */
+    .overlay {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .overlay-content {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      height: auto;
+      width: max-content;
+      padding: 3%;
+      border-radius: 20px;
+    }
     .starlabel label:after {
       content: " *";
       color: red;
+    }
+    .loadingMessage {
+      margin-top: 8%;
+      margin-left: 5%;
+      font-size: 18px;
+      font-weight: 500;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
     }
     @media screen and (max-width: 992px) {
       .main {
@@ -24,6 +61,14 @@
         padding-right: 5px;
         padding-top: 5px;
         padding-bottom: 5px;
+      }
+    }
+    @media screen and (max-width: 512px) {
+      .overlay-content {
+        flex-direction: column;
+      }
+      .loadingMessage {
+        font-size: 15px;
       }
     }
   </style>
@@ -40,6 +85,37 @@
     >
       <div>
         <h3>Form to Upload documents for MLC-2024</h3>
+      </div>
+      <div id="myOverlay" class="overlay">
+        <div class="overlay-content">
+          <svg
+            xmlns:svg="http://www.w3.org/2000/svg"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.0"
+            width="64px"
+            height="64px"
+            viewBox="0 0 128 128"
+            xml:space="preserve"
+          >
+            <path d="M0 128V83h17.25v27.75h93.5V83H128v45H0z" fill="#0D6EFD" />
+            <g>
+              <path
+                d="M80.92 210.95v-51.27h18.15L64 113.18l-35.07 46.5h18.15v51.27h33.84z"
+                fill="#0D6EFD"
+              />
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                from="0 0"
+                to="0 -220"
+                dur="2000ms"
+                repeatCount="indefinite"
+              />
+            </g>
+          </svg>
+          <p class="loadingMessage">Please wait your documents are uploading</p>
+        </div>
       </div>
       <hr />
       <form id="uploadForm">
@@ -174,12 +250,26 @@
             <input type="file" accept="image/*" class="fileInput" required />
           </div>
           <div class="col-12"></div>
-          <button id="processButton" class="btn btn-primary">Submit</button>
+          <button
+            id="processButton"
+            class="btn btn-primary"
+            onclick="showOverlay()"
+          >
+            Submit
+          </button>
         </div>
       </form>
     </div>
 
     <script>
+      function showOverlay() {
+        document.getElementById("myOverlay").style.display = "block";
+      }
+
+      // You can hide the overlay once the upload is done
+      function hideOverlay() {
+        document.getElementById("myOverlay").style.display = "none";
+      }
       document.addEventListener("DOMContentLoaded", function () {
         let url =
           "https://script.google.com/macros/s/AKfycbwUTSguey3zlz_pyCCaK9V3EzXzGDbDZMU4EqiIdjHE2LP2Wh3yDI3FfUd9H8OXSAmPiw/exec";
