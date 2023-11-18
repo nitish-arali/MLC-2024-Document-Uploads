@@ -228,7 +228,7 @@
             />
           </div>
           <!-- <p></p> -->
-         
+
           <div>
             <label for="refered" class="form-label" style="color: white"
               ><span style="color: red">*&nbsp;</span>Upload Degree/Graduation
@@ -260,7 +260,7 @@
 
             <input type="file" accept="image/*" class="fileInput" required />
           </div>
-          <hr/>
+          <hr />
           <div>
             <input type="file" accept="image/*" class="fileInput" />
             <label for="refered" class="form-label" style="color: white"
@@ -274,13 +274,7 @@
             </label>
           </div>
           <div class="col-12"></div>
-          <button
-            id="processButton"
-            class="btn btn-primary"
-            onclick="showOverlay()"
-          >
-            Submit
-          </button>
+          <button id="processButton" class="btn btn-primary">Submit</button>
         </div>
       </form>
     </div>
@@ -319,6 +313,8 @@
         });
 
         function processImages(allFiles, allTexts) {
+          showOverlay();
+
           let allData = [];
 
           // Iterate over allFiles
